@@ -15,10 +15,6 @@ function getComputerChoice(){
 
 
 
-
-
-
-
 function getHumanChoice(){
 
     let input = window.prompt("Paper, Rock, Scissor?");
