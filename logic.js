@@ -42,13 +42,13 @@ function playRound(humanSelection, computerSelection){
         console.log("Human Wins");
         return "human";
     } else if (humanSelection === "paper"&& computerSelection === "paper") {
-        console.log("Remis");
+        console.log("Draw");
         return "draw";
     } else if (humanSelection === "paper"&& computerSelection === "scissors") {
         console.log("Computer Wins");
         return "computer";
     } else if (humanSelection === "scissors"&& computerSelection === "scissors") {
-        console.log("Remis");
+        console.log("Draw");
         return "draw";
     } else if (humanSelection === "scissors"&& computerSelection === "rock") {
         console.log("Computer Wins");
@@ -57,7 +57,7 @@ function playRound(humanSelection, computerSelection){
         console.log("Human Wins");
         return "human";
     } else if (humanSelection === "rock"&& computerSelection === "rock") {
-        console.log("Remis");
+        console.log("Draw");
         return "draw";
     } else if (humanSelection === "rock"&& computerSelection === "paper") {
         result = console.log("Computer Wins")
