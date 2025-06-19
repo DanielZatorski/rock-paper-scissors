@@ -1,7 +1,7 @@
 
 function getComputerChoice(){
 
-    let values = ["rock","paper","scissor"]
+    let values = ["rock","paper","scissors"]
 
     let rand = values[Math.floor(values.length * Math.random())]
 
