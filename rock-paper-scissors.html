@@ -2,13 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
-    
-    <script type="text/javascript" src="/home/danielzatorski/repos/rock-paper-scissors/logic.js"></script>
+    <h1>Rock Paper Scissors</h1>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+
+    <button id="playAgain" style="display:none;">Play Another Round</button>
+
+    <div id="output" style="margin-top: 20px;">
+         <script src="logic.js"></script>
+    </div>
 
 
+
+    <script>
+        document.getElementById("rock").addEventListener("click", () => handleClick("rock"));
+        document.getElementById("paper").addEventListener("click", () => handleClick("paper"));
+        document.getElementById("scissors").addEventListener("click", () => handleClick("scissors"));
+    </script>
 </body>
 </html>

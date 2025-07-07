@@ -1,4 +1,15 @@
 
+let humanScore = 0;
+let computerScore = 0;
+
+const resultDiv = document.createElement("div");
+const scoreDiv = document.createElement("div");
+const winnerDiv = document.createElement("div");
+
+document.body.appendChild(resultDiv);
+document.body.appendChild(scoreDiv);
+document.body.appendChild(winnerDiv);
+
 function getComputerChoice(){
 
     let values = ["rock","paper","scissors"]
@@ -7,7 +18,7 @@ function getComputerChoice(){
 
 
 
- console.log(`Computer: ${rand}`)
+ //console.log(`Computer: ${rand}`)
  return rand
 
 }
@@ -66,48 +77,27 @@ function playRound(humanSelection, computerSelection){
 
 }
 
-function game(){
 
 
+function handleClick(playerSelection) {
+    if (humanScore >= 5 || computerScore >= 5) return;
 
-    let humanScore = 0
+    const computerSelection = getComputerChoice();
+    const result = playRound(playerSelection, computerSelection);
 
-    let computerScore = 0
-
-    //limit to 5 for i
-    for (let i=0; i<5; i++) {
-        console.log(`\nRound ${i + 1}`);
-
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-    
-        const result = playRound(humanSelection,computerSelection)
-
-        if (result === "human"){
-
-           humanScore++; 
-        }
-        
-        else if 
-
-            (result === "computer"){
-
-                computerScore++
-            
-        }
-        
+    if (result === "human") {
+        humanScore++;
+    } else if (result === "computer") {
+        computerScore++;
     }
 
-    console.log(`\nFinal Score:\nHuman: ${humanScore}\nComputer: ${computerScore}`);
+    scoreDiv.textContent = `Score: Human ${humanScore} - Computer ${computerScore}`;
 
+    if (humanScore === 5 || computerScore === 5) {
+        if (humanScore === 5) {
+            winnerDiv.textContent = "You win the game!";
+        } else {
+            winnerDiv.textContent = "Computer wins the game!";
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-game();
